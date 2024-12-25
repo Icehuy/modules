@@ -1,1 +1,1 @@
-return "w" -- w: working; d: down
+return "w" -- w: working; d: down; u: updating
