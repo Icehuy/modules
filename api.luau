@@ -3,9 +3,6 @@ api.localplayer = game:GetService("Players").LocalPlayer
 
 
 api.functions.create_circle = function(name, pos, radius, shitstorage) -- гарбаге ес
-    if api.shit_folder and api.shit_folder:FindFirstChild(name) then 
-        return 
-    end
     if not api.localplayer then return end 
 
     local circle = Instance.new("Part", shitstorage)
