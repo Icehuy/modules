@@ -1,14 +1,14 @@
-local api = { shit_folder = Instance.new("Folder", workspace); maths = {}; functions = {} }
+local api = {maths = {}; functions = {} }
 api.localplayer = game:GetService("Players").LocalPlayer
 
 
-api.functions.create_circle = function(name, pos, radius) -- гарбаге ес
+api.functions.create_circle = function(name, pos, radius, shitstorage) -- гарбаге ес
     if api.shit_folder and api.shit_folder:FindFirstChild(name) then 
         return 
     end
     if not api.localplayer then return end 
 
-    local circle = Instance.new("Part", api.shit_folder)
+    local circle = Instance.new("Part", shitstorage)
     circle.Name = name
     circle.Size = Vector3.new(0, radius, radius)
     circle.Shape = 'Cylinder'
@@ -31,23 +31,4 @@ api.functions.create_circle = function(name, pos, radius) -- гарбаге ес
     
 end
 
-api.functions.delete_circle = function(name)
-    local folder = api.shit_folder 
-    if not folder then return end 
-    for i,v in pairs(folder:GetChildren()) do 
-        if v.Name == name then 
-            v:Destroy()
-        end
-    end
-end
-
-api.functions.clear_folder = function()
-    local folder = api.shit_folder 
-    if not folder then return end 
-    for i,v in pairs(folder:GetChildren()) do 
-        v:Destroy()
-    end
-end
-
-
-return api -- late
+return api -- later
